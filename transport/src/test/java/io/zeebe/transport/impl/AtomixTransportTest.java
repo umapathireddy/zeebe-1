@@ -182,7 +182,7 @@ public class AtomixTransportTest {
         nodeAddressSupplier, (response) -> false, new Request("messageABC"), Duration.ofSeconds(3));
 
     // then
-    final var success = retryLatch.await(1, TimeUnit.SECONDS);
+    final var success = retryLatch.await(2, TimeUnit.SECONDS);
     assertThat(success).isTrue();
     assertThat(retryLatch.getCount()).isEqualTo(0);
   }
